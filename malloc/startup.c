@@ -1,10 +1,13 @@
 #include <stdint.h>
 #include "blink.h"
 #include "reg.h"
+#include <stdlib.h>
+#include "stddef.h"
 
 extern int main(void);
 
 void set_sysclk_pll(void);
+
 
 void reset_handler(void)
 {
@@ -103,3 +106,8 @@ void set_sysclk_pll(void)
 	while (READ_BIT(RCC_BASE + RCC_CFGR_OFFSET, SWS_1_BIT) != 1 || READ_BIT(RCC_BASE + RCC_CFGR_OFFSET, SWS_0_BIT) != 0)
 		;
 }
+
+
+
+
+
